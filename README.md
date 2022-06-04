@@ -20,12 +20,11 @@ In production, Nginx proxies the local webfront port to 443 and redirects 80 to 
 
 ## Webserver Setup
 
-
 ### Install needed utilities.
 
 ```sh
 cd ~
-apt-get install nginx git ufw fail2ban
+apt-get install nginx git fail2ban wget curl gnupg htop 
 
 # Download nvm.
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
@@ -50,39 +49,30 @@ apt-get install -y mongodb-org
 systemctl enable --now mongod
 ```
 
-### Clone repositories.
-
-```sh
-cd /opt
-
-git clone --depth=1 https://krewiogit:J5nETmjUkf59z9A@github.com/Krew-io/krew2.io.git
-git clone --depth=1 https://github.com/Krew-io/krew-wiki.git
-```
-
 ### Get SSL Certificate
 
-If the SSL certificate is not present, get one via LetsEncrypt.
-
 ```sh
-# Install certbot
-apt-get install certbot
-
-# Make sure NGINX is not running during this process. This is not necessary if it is not installed yet.
+# Make sure NGINX is not running during this process.
 systemctl stop nginx
 
-certbot --certonly -d krew.io
-certbot --certonly -d wiki.krew.io
-```
+# Install certbot
+apt-get instal python3-certbot-dns-cloudflare
 
-Otherwise, if you have a wildcard certificate, copy it from the repository into working directories.
-```sh
-# Create folders for the certificates to go into.
-mkdir -p /etc/letsencrypt/live/krew.io
-mkdir -p /etc/letsencrypt/live/wiki.krew.io
+# Create Secrets Directory
+mkdir /root/.secrets/
+touch /root/.secrets/cloudflare.ini
 
-# Copy the certificates from the repository.
-cp /opt/krew2.io/src/server/certs/* /etc/letsencrypt/live/krew.io/
-cp /opt/krew2.io/src/server/certs/* /etc/letsencrypt/live/wiki.krew.io/
+# Add credentials to secrets file
+nano /root/.secrets/cloudflare.ini
+
+# dns_cloudflare_email = youremail@example.com # Please Replace with cloudflare email
+# dns_cloudflare_api_key = yourapikey # Api global key located @ https://cloudflare.com
+
+# Create the certificate
+sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/cloudflare.ini -d example.com,*.example.com
+
+# Check if the service is active for automatic renewal
+sudo systemctl status certbot.timer
 ```
 
 ### Configure NGINX.
@@ -91,12 +81,16 @@ cp /opt/krew2.io/src/server/certs/* /etc/letsencrypt/live/wiki.krew.io/
 # Unlink the old NGINX configuration.
 unlink /etc/nginx/sites-enabled/default
 
-# Copy the NGINX configuration from the repository to the working directory.
-cp /opt/krew2.io/nginx.conf /etc/nginx/sites-available/krew.conf
-ln -s /etc/nginx/sites-available/krew.conf /etc/nginx/sites-enabled/krew.conf
+# Install the configuration to nginx
+cd /etc/nginx/conf.d/
+wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/nginx%20config/krew.conf
 
-# Restart NGINX.
-systemctl restart nginx
+# Edit the configuration
+nano krew.conf 
+echo woooo, were almost there. can you feel it?
+
+# Start Nginx
+systemctl start nginx
 ```
 
 ### Build and run the project.
