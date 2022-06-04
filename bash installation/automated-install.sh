@@ -22,8 +22,12 @@ wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/nginx%2
 # Preparing Certificates to be setup manully
 mkdir /root/.secrets/
 touch /root/.secrets/cloudflare.ini
+cd /root/.secrets/
+wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/certbot/cloudflare.ini
 
-# TBD
+# Now It must be a secret right?
+sudo chmod 0700 /root/.secrets/
+sudo chmod 0400 /root/.secrets/cloudflare.ini
 
 # Fetching Required Third Party Packages
 cd /home
@@ -42,8 +46,6 @@ sudo apt -y install nodejs # NodeJs 14.16.0
 sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y
 
 # Installation Complete
-echo Here are some ideas what to do now
-
 
 # Credits
 echo ====================Credits=========================
