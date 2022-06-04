@@ -4,7 +4,7 @@
   "description": "A 3D browser game",
   "main": "gruntfile.js",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bad-words": "3.0.2",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
