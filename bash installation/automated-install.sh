@@ -42,10 +42,16 @@ sudo apt update
 sudo apt install mongodb-org # MongoDb 4.4
 sudo apt -y install nodejs # NodeJs 14.16.0
 
+# Enable Mongodb
+systemctl enable --now mongod
+
 # Update Everything
 sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y
+# Prequilities Aquired
 
-# Installation Complete
+# Aquiring Files
+
+# WIP 
 
 # Credits
 echo ====================Credits=========================
