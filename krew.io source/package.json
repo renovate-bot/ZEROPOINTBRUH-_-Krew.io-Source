@@ -1,7 +1,7 @@
 {
-  "name": "krew.io",
+  "name": "Krew.io Source",
   "version": "1.9.1",
-  "description": "A 3D browser game",
+  "description": "A 3D open source browser game",
   "main": "gruntfile.js",
   "dependencies": {
     "axios": "^0.21.2",
@@ -45,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Krew-io/krew2.io.git"
+    "url": "git+https://github.com/ZEROPOINTBRUH/Krew.io-Source.git"
   },
   "keywords": [
     "krew",
@@ -54,9 +54,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Krew-io/krew2.io/issues"
+    "url": "https://github.com/ZEROPOINTBRUH/Krew.io-Source/issues"
   },
-  "homepage": "https://github.com/Krew-io/krew2.io#readme",
+  "homepage": "https://github.com/ZEROPOINTBRUH/Krew.io-Source/blob/main/README.md",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/eslint-parser": "^7.13.10",
