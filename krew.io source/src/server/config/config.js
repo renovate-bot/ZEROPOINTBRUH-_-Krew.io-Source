@@ -2,10 +2,10 @@ const dotenv = require(`dotenv`).config();
 const path = require(`path`);
 
 const config = {
-    appname: `Krew.cf`,
+    appname: `example.com`,
     port: process.env.NODE_ENV === `prod` ? 8200 : 8080,
     mode: process.env.NODE_ENV,
-    domain: `krew.cf`,
+    domain: `example.com`,
     logging: true,
     serverCount: 3,
     maxPlayerCount: 250,

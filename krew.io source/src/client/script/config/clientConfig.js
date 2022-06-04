@@ -1,12 +1,12 @@
 const config = {
     // Client side staff
-    Admins: [`DamienVesper`, `Zeropoint`, `BR88C`, `Sjmun`, `Fiftyyyyy`],
-    Mods: [`TheChoco`, `Tommy_Finle`],
-    Helpers: [`Sky920`],
-    Designers: [`bread`],
+    Admins: [`DamienVesper`, `Zeropoint`], // I still love ahan even though we dont talk much. The others.. I really didn't care about much... I know why too
+    Mods: [`TheRandomguy98`],
+    Helpers: [`Wartowin`],
+    Designers: [`Zeropoint`],
 
     // Set URL
-    url: `https://krew.cf`,
+    url: `https://example.com`,
 
     // Set config.worldsize
     worldsize: 2500,
