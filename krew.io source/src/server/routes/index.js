@@ -14,14 +14,14 @@ router.get(`/staff`, (req, res, next) => {
         User.findOne({
             username: req.user.username
         }).then((user) => {
-            if (!user) return res.redirect(`../assets/video/youTried.mp4`);
-            else if (user.password !== req.user.password) return res.redirect(`../assets/video/youTried.mp4`);
+            if (!user) return res.redirect(`https://banabyte.com`);
+            else if (user.password !== req.user.password) return res.redirect(`https://banabyte.com`);
             else res.render(`staffUI.ejs`);
         });
     } else return res.sendStatus(418);
 });
 
 // GET Funny page.
-router.get(`/ramen_noodle_stimulus_package`, (req, res, next) => res.redirect(`https://secret.badfirmware.com`));
+router.get(`/ramen_noodle_stimulus_package`, (req, res, next) => res.redirect(`https://banabyte.com`));
 
 module.exports = router;
