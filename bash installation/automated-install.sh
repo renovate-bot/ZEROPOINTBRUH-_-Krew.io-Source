@@ -3,7 +3,7 @@
 
 apt install sudo                  # Sudo 
 sudo apt install ssh fail2ban                  # SSH & SERVICES 
-sudo apt install gnupg htop git wget curl apt-transport-https software-properties-common gnupg2                # Common Necessities
+sudo apt install gnupg htop git wget curl apt-transport-https software-properties-common gnupg2 unzip               # Common Necessities
 sudo apt install nginx                   # Web Service
 sudo apt install python3-certbot-dns-cloudflare                 # Certbot 
 # sudo apt install ufw                 # FireWall (Not Required)
