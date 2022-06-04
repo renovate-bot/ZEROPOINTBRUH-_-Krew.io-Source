@@ -53,3 +53,5 @@ systemctl enable --now mongod
 # Build and run the project.
 npm i
 npm run prod
+
+# Holy crap you guys built this wrong
