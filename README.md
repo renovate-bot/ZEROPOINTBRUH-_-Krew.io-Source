@@ -1,7 +1,7 @@
 # Krew.io Source
  Krew.io Source is an open source engine for krew.io
 
-# Disclaimer
+## Disclaimer
  This code was sourced off https://github.com/arpandutta0000/krew2.io
 
 ### Prequisites
