@@ -1,6 +1,9 @@
 # Krew.io Source
  Krew.io Source is an open source engine for krew.io
 
+# Disclaimer
+ This code was sourced off https://github.com/arpandutta0000/krew2.io
+
 ### Prequisites
  * Node.js v14
  * NPM v7
@@ -99,10 +102,35 @@ npm i
 npm run prod
 ```
 
+### Create Certificates
+```sh
+# Please Run me as root
+# Your website has to be registared to https://www.cloudflare.com/ dns service
+
+# Editing Certbot Information
+nano /root/.secrets/cloudflare.ini
+
+# dns_cloudflare_email = youremail@example.com
+# dns_cloudflare_api_key = yourapikey 
+
+# Keep your secrets a Secret
+sudo chmod 0700 /root/.secrets/
+sudo chmod 0400 /root/.secrets/cloudflare.ini
+
+# Create the Certificate
+# Fun fact: You dont need to open port 80 to create the certificate
+sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/cloudflare.ini -d example.com,*.example.com
+```
+
+
 ### Mongodb Setup
 
 ```sh
+# Please Run me as root
+# Open Mongodb up
 mongo
+
+# Run these Commands in mongodb
 use exampledb
 db.createUser({user: 'exampledb',pwd: 'passwordsgenerator.net',roles: [ { role: 'readWrite', db: 'exampledb' } ]});
 ```
