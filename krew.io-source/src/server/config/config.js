@@ -7,8 +7,8 @@ const config = {
     mode: process.env.NODE_ENV,
     domain: `example.com`,
     logging: true,
-    serverCount: 3,
-    maxPlayerCount: 250,
+    serverCount: 4,
+    maxPlayerCount: 100,
     discord: {
         prefix: `k!`,
         channels: {
@@ -29,12 +29,12 @@ const config = {
         2087 // Server 3
     ],
 
-    additionalBadWords: [`idiot`, `2chOld`, `Yuquan`, `devclied`, `LapaMauve`],
+    additionalBadWords: ['Example',],
 
-    admins: [`DamienVesper`, `Zeropoint`, `BR88C`, `Sjmun`, `Fiftyyyyy`],
-    mods: [`TheChoco`, `Tommy_Finle`],
-    helpers: [`Sky920`],
-    designers: [`bread`],
+    admins: [`DamienVesper`, `Zeropoint`],
+    mods: [`Therandomguy98`],
+    helpers: [`Wartowin`],
+    designers: [`amongus`],
 
     maxBots: 100,
     maxAmountCratesInSea: 1100,

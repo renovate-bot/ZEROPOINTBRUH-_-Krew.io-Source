@@ -269,13 +269,6 @@ td {
     }
 }
 
-/* Preroll Ad */
-.ad-player {
-    position: absolute;
-    top: 25%;
-    right: 20%;
-    transform: translate(50%, -43%);
-}
 
 /* Game UI (Container for all game elements) */
 #game-ui {

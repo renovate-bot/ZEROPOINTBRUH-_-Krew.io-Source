@@ -85,7 +85,7 @@ app.set(`trust proxy`, true);
 
 // Serve the static directory.
 app.use(express.static(config.staticDir));
-app.use(`/ads.txt`, express.static(`ads.txt`)); // Static ad loader.
+
 
 // Use routes.
 app.use(`/api`, apiRouter);

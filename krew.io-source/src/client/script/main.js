@@ -5,10 +5,6 @@ $(document).ready(() => {
         // Clear console
         console.clear();
 
-        // Initiate ads
-        adBlockCheck();
-        initAds();
-
         // Check if Krew is on a different site / in an iframe
         if (
             !window.location.hostname.endsWith(`krew.io`) ||

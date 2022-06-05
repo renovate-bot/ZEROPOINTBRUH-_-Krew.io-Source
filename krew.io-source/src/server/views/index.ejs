@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Set website metadata -->
-    <title>Krew.io</title>
-    <meta name="description" content="An online 3D browser game where you shoot ships and other players to earn money and rule the seven seas!">
-    <meta name="keywords" content="krew, io, devclied, shooter, game">
-    <meta property="og:title" content="Krew.io">
-    <meta property="og:description" content="An online 3D browser game where you shoot ships and other players to earn money and rule the seven seas!">
+    <title>Krew.io Source</title>
+    <meta name="description" content="An online open source 3D browser game where you shoot ships and other players to earn money and rule the seven seas!">
+    <meta name="keywords" content="krew, io, banabyte, shooter, game">
+    <meta property="og:title" content="Krew.io Source">
+    <meta property="og:description" content="An online open source 3D browser game where you shoot ships and other players to earn money and rule the seven seas!">
 
 
     <!-- Get icons -->
@@ -80,9 +80,6 @@
     <script src="/build/libs/ua.js"></script>
 
 
-    <!-- AdinPlay Ads Initialization -->
-    <!-- <script src="https://api.adinplay.com/libs/aiptag/pub/BLS/krew.io/tag.min.js"></script> -->
-
 </head>
 
 
@@ -128,7 +125,6 @@
                 <div class="white-transparent-bg">
                     <br>
                     <span id="play-on-krewio-message" class="text-danger" style="display: none; font-size: 16px; font-weight: bold;">For the best gameplay experience, play on <a id="goto-krew-io" href="#">krew.io</a></span>
-                    <span id="disable-adblock-message" class="text-danger" style="display: none; font-size: 16px; font-weight: bold;">Please support Krew.io by disabling adblock.</span>
 
                     <!-- If the user is using an invite link -->
                     <div class="alert alert-success" role="alert" id="invite-is-used" style="display: none;">Ahoy! It seems like you're using an invite link 😄</div>
@@ -197,7 +193,7 @@
 		    <br><br>
 
                     <small>
-                        <a href="https://wiki.krew.io" target="_blank">Krew.io Wiki - Guide - Tip & Tricks</a>
+                        <a href="https://banabyte.com" target="_blank">Krew.io Wiki - Guide - Tip & Tricks</a>
                     </small>
 
                     <!-- Divider between ads and top buttons -->
@@ -214,7 +210,7 @@
                     </small>
                     <br />
                     <small>
-                        More IO games: <a href="https://webgames.io" target="_blank">WebGames.io</a>
+                        More IO games: <a href="https://banabyte.com" target="_blank">WebGames.io</a>
                     </small>
                 </div>
             </div>
@@ -1706,8 +1702,6 @@
 
     <!-- START Miscellaneous HTML -->
 
-    <!-- Preroll Ad Container (Centered class: absolute-center) -->
-    <div id="preroll-centered" class="ad-player"></div>
 
     <!-- GameAnalytics -->
     <script>
@@ -1731,22 +1725,6 @@
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'id-jssdk'));
             }
-        }
-    </script>
-
-    <!-- Global site tag (gtag.js) (Google Analytics) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag () {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-105351798-36');
-        if (window.location != window.parent.location && document.referrer.includes("crazygames")) $("#portal-backlink").html("<a href='https://www.crazygames.com' target='_window'>Crazy Games</a>")
-        if (!adEnabled) {
-            $(".ad-div").each(() => $(this).hide());
-            $("#portal-backlink").hide();
         }
     </script>
 

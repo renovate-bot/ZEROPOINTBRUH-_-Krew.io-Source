@@ -165,9 +165,6 @@ let initSocketBinds = () => {
         // Close shopping windows of the players that are exiting the island
         socket.on(`exitIsland`, (data) => exitIsland(data));
 
-        // Show video ad
-        socket.on(`showAdinplayCentered`, () => showAdinplayCentered());
-
         // Set departure timer
         socket.on(`departureWarning`, () => {
             if ($(`#toggle-krew-list-modal-button`).hasClass(`enabled`)) {

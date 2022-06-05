@@ -28,7 +28,6 @@ let goldMultiplier = 2000;
 let middle = config.worldsize / 2;
 let secondsAlive = 0;
 
-let adBlockEnabled = false;
 let threejsStarted = false;
 let viewSails = false;
 
