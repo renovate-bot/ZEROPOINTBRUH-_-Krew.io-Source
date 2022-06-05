@@ -54,6 +54,7 @@ wget https://github.com/ZEROPOINTBRUH/Krew.io-Source/releases/download/Release/k
 
 # Extracting Package
 unzip krew.io-source.zip
+rm -rf krew.io-source.zip
 chmod 775 /var/opt/krew.io-source
 
 # Installing Node Modules
