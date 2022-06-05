@@ -1,12 +1,12 @@
 # Please run me in Root
 # Installing common distributables
 
-apt install sudo                  # Sudo 
-sudo apt install ssh fail2ban                  # SSH & SERVICES 
-sudo apt install gnupg htop git wget curl apt-transport-https software-properties-common gnupg2 unzip               # Common Necessities
-sudo apt install nginx                   # Web Service
-sudo apt install python3-certbot-dns-cloudflare                 # Certbot 
-# sudo apt install ufw                 # FireWall (Not Required)
+apt install sudo -y                 # Sudo 
+sudo apt install ssh fail2ban -y                 # SSH & SERVICES 
+sudo apt install gnupg htop git wget curl apt-transport-https software-properties-common gnupg2 unzip -y              # Common Necessities
+sudo apt install nginx -y                  # Web Service
+sudo apt install python3-certbot-dns-cloudflare -y                # Certbot 
+# sudo apt install ufw -y                # FireWall (Not Required)
 
 # Halting Nginx
 systemctl stop nginx
@@ -33,14 +33,14 @@ sudo chmod 0400 /root/.secrets/cloudflare.ini
 cd /home
 echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | tee /etc/apt/sources.list.d/mongodb-org.list
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
-sudo apt update
+sudo apt update -y
 
 sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-sudo apt update
+sudo apt update -y
 
 # Install common third party distributables
-sudo apt install mongodb-org # MongoDb 4.4
-sudo apt -y install nodejs # NodeJs 14.16.0
+sudo apt install mongodb-org -y # MongoDb 4.4
+sudo apt -y install nodejs -y # NodeJs 14.16.0
 
 # Enable Mongodb
 systemctl enable --now mongod
@@ -50,8 +50,16 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y
 # Prequilities Aquired
 
 # Aquiring Files
+cd /var/opt
+wget https://github.com/ZEROPOINTBRUH/Krew.io-Source/releases/download/Release/krew.io-source.zip
 
-# WIP 
+# Extracting Package
+unzip krew.io-source.zip
+chmod 775 /var/opt/krew.io-source
+
+# Installing Node Modules
+npm i
+npm run prod
 
 # Credits
 echo ====================Credits=========================
