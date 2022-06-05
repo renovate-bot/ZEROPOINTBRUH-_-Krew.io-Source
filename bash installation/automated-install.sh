@@ -58,6 +58,7 @@ unzip krew.io-source.zip
 chmod 775 /var/opt/krew.io-source
 
 # Installing Node Modules
+cd /var/opt/krew.io-source
 npm i
 npm run prod
 
