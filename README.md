@@ -28,85 +28,83 @@ chmod 777 automated-install.sh
 ./automated-install.sh
 ```
 
-### Install needed utilities.
-
+### Manual Installation
 ```sh
-cd ~
-apt-get install nginx git fail2ban wget curl gnupg htop 
+# Please run me in Root
+# Installing common distributables
 
-# Download nvm.
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source ~/.profile
+apt install sudo -y # Sudo 
+sudo apt install ssh fail2ban -y # SSH & SERVICES 
+sudo apt install gnupg htop git wget curl apt-transport-https software-properties-common gnupg2 unzip -y # Common Necessities
+sudo apt install nginx -y # Web Service
+sudo apt install python3-certbot-dns-cloudflare -y # Certbot 
+# sudo apt install ufw -y # FireWall (Not Required)
 
-# Install Node.JS via nvm.
-nvm install 14.16.0
-npm i -g npm
-
-# Install PM2 globally.
-npm i pm2 -g
-
-# Get MongoDB repository key.
-wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
-echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-
-# Update available packages and install MongoDB.
-apt-get update
-apt-get install -y mongodb-org
-
-# Start MongoDB
-systemctl enable --now mongod
-```
-
-### Get SSL Certificate
-
-```sh
-# Make sure NGINX is not running during this process.
+# Halting Nginx
 systemctl stop nginx
 
-# Install certbot
-apt-get instal python3-certbot-dns-cloudflare
-
-# Create Secrets Directory
-mkdir /root/.secrets/
-touch /root/.secrets/cloudflare.ini
-
-# Add credentials to secrets file
-nano /root/.secrets/cloudflare.ini
-
-# dns_cloudflare_email = youremail@example.com # Please Replace with cloudflare email
-# dns_cloudflare_api_key = yourapikey # Api global key located @ https://cloudflare.com
-
-# Create the certificate
-sudo certbot certonly --dns-cloudflare --dns-cloudflare-credentials /root/.secrets/cloudflare.ini -d example.com,*.example.com
-
-# Check if the service is active for automatic renewal
-sudo systemctl status certbot.timer
-```
-
-### Configure NGINX.
-
-```sh
 # Unlink the old NGINX configuration.
 unlink /etc/nginx/sites-enabled/default
 
-# Install the configuration to nginx
-cd /etc/nginx/conf.d/
+# Fetching Latest Nginx Configuration
+
+cd /etc/nginx/conf.d
 wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/nginx%20config/krew.conf
 
-# Edit the configuration
-nano krew.conf 
-echo woooo, were almost there. can you feel it?
+# Preparing Certificates to be setup manully
+mkdir /root/.secrets/
+cd /root/.secrets/
+wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/certbot/cloudflare.ini
 
-# Start Nginx
-systemctl start nginx
-```
+# Now It must be a secret right?
+sudo chmod 0700 /root/.secrets/
+sudo chmod 0400 /root/.secrets/cloudflare.ini
 
-### Build and run the project.
-```sh
-cd /opt/krew2.io
+# Fetching Required Third Party Packages
+cd /home
+echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | tee /etc/apt/sources.list.d/mongodb-org.list
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | apt-key add -
+sudo apt update -y
 
+sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
+sudo apt update -y
+
+# Install common third party distributables
+sudo apt install mongodb-org -y # MongoDb 4.4
+sudo apt -y install nodejs -y # NodeJs 14.16.0
+
+# Install PM2 Globaly
+npm i -g npm
+npm i pm2 -g
+
+# Enable Mongodb
+systemctl enable --now mongod
+
+# Update Everything
+sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y
+# Prequilities Aquired
+
+# Aquiring Files
+cd /var/opt
+wget https://github.com/ZEROPOINTBRUH/Krew.io-Source/releases/download/Release/krew.io-source.zip
+
+# Extracting Package
+unzip krew.io-source.zip
+rm -rf krew.io-source.zip
+chmod 775 /var/opt/krew.io-source
+
+# Installing Node Modules
+cd /var/opt/krew.io-source
 npm i
 npm run prod
+```
+
+### Mongodb Setup
+
+```sh
+mongo
+use exampledb
+db.createUser({user: 'exampledb',pwd: 'passwordsgenerator.net',roles: [ { role: 'readWrite', db: 'exampledb' } ]});
 ```
 
 
