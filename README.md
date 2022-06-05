@@ -36,6 +36,12 @@ chmod 777 automated-install.sh
 
 # Run the installation
 ./automated-install.sh
+
+# After this is complete
+# Please follow the instructions guided here
+# https://github.com/arpandutta0000/krew2.io](https://github.com/ZEROPOINTBRUH/Krew.io-Source#create-certificates
+# &
+# https://github.com/ZEROPOINTBRUH/Krew.io-Source#mongodb-setup
 ```
 
 ### Manual Installation
