@@ -27,10 +27,13 @@ In production, Nginx proxies the local webfront port to 443 and redirects 80 to 
 ```sh
 # Please run me in root
 su
+
 # Obtaining the files
 wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/bash%20installation/automated-install.sh
+
 # Changing Permissions of the installation
 chmod 777 automated-install.sh
+
 # Run the installation
 ./automated-install.sh
 ```
@@ -38,6 +41,8 @@ chmod 777 automated-install.sh
 ### Manual Installation
 ```sh
 # Please run me in Root
+su
+
 # Installing common distributables
 
 apt install sudo -y # Sudo 
