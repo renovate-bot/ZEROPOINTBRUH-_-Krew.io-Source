@@ -41,7 +41,7 @@ client.on(`ready`, async () => {
     client.user.setPresence({
         game: {
             type: `WATCHING`,
-            name: `Krew.io`
+            name: `example.com`
         },
         status: `dnd`
     });
