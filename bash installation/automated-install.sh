@@ -41,6 +41,10 @@ sudo apt update -y
 sudo apt install mongodb-org -y # MongoDb 4.4
 sudo apt -y install nodejs -y # NodeJs 14.16.0
 
+# Install PM2 Globaly
+npm i -g npm
+npm i pm2 -g
+
 # Enable Mongodb
 systemctl enable --now mongod
 
