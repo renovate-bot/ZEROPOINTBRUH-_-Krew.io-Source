@@ -30,9 +30,6 @@ let reportIPs = [];
 let serverRestart = false;
 let currentTime = (new Date().getUTCMinutes() > 35 && new Date().getUTCMinutes() < 55) ? `night` : `day`;
 
-// Bots in testing environment.
-const createBots = require(`./bots.js`);
-if (config.mode === `dev` && process.env.TESTING_ENV) createBots();
 
 // Log when server starts.
 const serverStartTimestamp = Date.now();
