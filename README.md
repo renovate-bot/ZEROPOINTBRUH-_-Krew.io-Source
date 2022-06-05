@@ -114,6 +114,8 @@ npm run prod
 ### Create Certificates
 ```sh
 # Please Run me as root
+su
+
 # Your website has to be registared to https://www.cloudflare.com/ dns service
 
 # Editing Certbot Information
