@@ -21,7 +21,6 @@ wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/nginx%2
 
 # Preparing Certificates to be setup manully
 mkdir /root/.secrets/
-touch /root/.secrets/cloudflare.ini
 cd /root/.secrets/
 wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/certbot/cloudflare.ini
 
