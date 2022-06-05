@@ -1,2 +1,2 @@
-cd /opt/krew2.io
+cd /var/opt/krew.io-source
 pm2 restart all
