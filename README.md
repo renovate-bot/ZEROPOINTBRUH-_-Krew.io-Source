@@ -20,6 +20,14 @@ In production, Nginx proxies the local webfront port to 443 and redirects 80 to 
 
 ## Webserver Setup
 
+### Automated Installation.
+```sh
+su
+wget https://raw.githubusercontent.com/ZEROPOINTBRUH/Krew.io-Source/main/bash%20installation/automated-install.sh
+chmod 777 automated-install.sh
+./automated-install.sh
+```
+
 ### Install needed utilities.
 
 ```sh
