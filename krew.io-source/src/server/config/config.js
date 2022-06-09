@@ -7,7 +7,7 @@ const config = {
     mode: process.env.NODE_ENV,
     domain: `example.com`,
     logging: true,
-    serverCount: 4,
+    serverCount: 3,
     maxPlayerCount: 100,
     discord: {
         prefix: `k!`,
