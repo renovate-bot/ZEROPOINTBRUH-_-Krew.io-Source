@@ -6,7 +6,7 @@ const config = {
     Designers: [`Zeropoint`],
 
     // Set URL
-    url: `https://example.com`,
+    url: `https://beta.bullethosting.nl`,
 
     // Set config.worldsize
     worldsize: 2500,

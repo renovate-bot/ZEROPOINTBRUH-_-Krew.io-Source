@@ -2,12 +2,12 @@ const dotenv = require(`dotenv`).config();
 const path = require(`path`);
 
 const config = {
-    appname: `example.com`,
+    appname: `beta.bullethosting.nl`,
     port: process.env.NODE_ENV === `prod` ? 8200 : 8080,
     mode: process.env.NODE_ENV,
-    domain: `example.com`,
+    domain: `beta.bullethosting.nl`,
     logging: true,
-    serverCount: 3,
+    serverCount: 4,
     maxPlayerCount: 100,
     discord: {
         prefix: `k!`,
@@ -31,7 +31,7 @@ const config = {
 
     additionalBadWords: ['Example',],
 
-    admins: [`DamienVesper`, `Zeropoint`],
+    admins: [`Zeropoint`],
     mods: [`Therandomguy98`],
     helpers: [`Wartowin`],
     designers: [`amongus`],
