@@ -13,7 +13,7 @@ $(document).ready(() => {
             self != top
         ) $(`#play-on-krewio-message`).show();
 
-        $(`#goto-krew-io`).on(`click`, () => top.location.href = `https://krew.io`);
+        $(`#goto-krew-io`).on(`click`, () => top.location.href = `https://beta.bullethosting.nl/`);
     }
 
     // Print console header
