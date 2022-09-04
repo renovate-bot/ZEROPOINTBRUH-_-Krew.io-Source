@@ -28,7 +28,7 @@
     "grunt-webpack": "^4.0.2",
     "https": "^1.0.0",
     "mongoose": "^5.11.17",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "sendpulse-api": "^1.1.5",
