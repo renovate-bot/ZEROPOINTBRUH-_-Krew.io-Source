@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "node" # Update to "node" for Node.js
+  - package-ecosystem: "npm" # Update to "npm" for Node.js
     directory: "/"           # Update this to the correct path of your package manifests
     schedule:
       interval: "daily"
